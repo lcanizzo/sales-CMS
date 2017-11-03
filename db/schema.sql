@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `shopping_db`.`products` (
   `SKU` VARCHAR(50) NULL DEFAULT 'No SKU Assigned', 
   `weight` FLOAT NULL DEFAULT 0,
   `cartDesc` VARCHAR(250) NULL DEFAULT 'No cart description added',
-  `longDesc` TEXT NULL DEFAULT 'No description added',
+  `longDesc` TEXT NULL,
   `thumb` VARCHAR(255) NULL DEFAULT 'https://cdn.shopify.com/s/files/1/2159/0319/products/160701-O-ZZ999-001_30bb7a46-ec57-452b-8d8e-ebfb7d906d45_480x480.png?v=1501409481',
   `image` VARCHAR(255) NULL DEFAULT 'https://cdn.shopify.com/s/files/1/2159/0319/products/160701-O-ZZ999-001_30bb7a46-ec57-452b-8d8e-ebfb7d906d45_480x480.png?v=1501409481',
   `lastUpdate` DATETIME NULL,
