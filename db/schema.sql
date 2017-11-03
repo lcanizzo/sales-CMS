@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `shopping_db`.`users` (
   `city` VARCHAR(90) NULL,
   `state` VARCHAR(20) NULL,
   `zip` VARCHAR(12) NULL,
-  `emailVerified` TINYINT NULL,
+  `emailVerified` TINYINT NULL DEFAULT 0,
   `registrationDate` TIMESTAMP NULL,
   `verificationCode` VARCHAR(20) NULL,
   `IP` VARCHAR(50) NULL,
@@ -123,17 +123,17 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `shopping_db`.`orders` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `users_id` INT NOT NULL,
-  `total` DECIMAL(6,2) NULL,
-  `shipName` VARCHAR(100) NULL,
-  `shipAddress` VARCHAR(100) NULL,
-  `shipAddress2` VARCHAR(100) NULL,
-  `shipCity` VARCHAR(50) NULL,
-  `shipState` VARCHAR(45) NULL,
-  `shipZip` VARCHAR(20) NULL,
-  `shipCountry` VARCHAR(50) NULL,
-  `phone` VARCHAR(20) NULL,
-  `shippingCost` DECIMAL(16,2) NULL,
-  `email` VARCHAR(100) NULL,
+  `total` DECIMAL(6,2) NOT NULL,
+  `shipName` VARCHAR(100) NOT NULL,
+  `shipAddress` VARCHAR(100) NOT NULL,
+  `shipAddress2` VARCHAR(100) NULL DEFAULT 'NoInput',
+  `shipCity` VARCHAR(50) NOT NULL,
+  `shipState` VARCHAR(45) NOT NULL,
+  `shipZip` VARCHAR(20) NOT NULL,
+  `shipCountry` VARCHAR(50) NULL DEFAULT 'NoInput',
+  `phone` VARCHAR(20) NULL DEFAULT 'NoInput',
+  `shippingCost` DECIMAL(16,2) NULL DEFAULT 0,
+  `email` VARCHAR(100) NULL DEFAULT 'NoInput',
   `date` TIMESTAMP NULL,
   `shipped` TINYINT NULL DEFAULT 0,
   `trackingNum` VARCHAR(80) NULL,
@@ -156,9 +156,9 @@ CREATE TABLE IF NOT EXISTS `shopping_db`.`ordersToProducts` (
   `orders_users_id` INT NOT NULL,
   `products_id` INT NOT NULL,
   `products_categories_id` INT NOT NULL,
-  `product_name` VARCHAR(250) NULL,
-  `product_price` DECIMAL(16,2) NULL,
-  `product_SKU` VARCHAR(50) NULL,
+  `product_name` VARCHAR(250) NOT NULL,
+  `product_price` DECIMAL(16,2) NOT NULL,
+  `product_SKU` VARCHAR(50) NULL DEFAULT 'No SKU Assigned',
   `quantity` INT(11) NULL,
   PRIMARY KEY (`id`, `orders_id`, `orders_users_id`, `products_id`, `products_categories_id`),
   INDEX `fk_orderDetails_orders1_idx` (`orders_id` ASC, `orders_users_id` ASC),
@@ -181,7 +181,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shopping_db`.`optionGroups` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(50) NULL,
+  `name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -191,7 +191,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shopping_db`.`options` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(50) NULL,
+  `name` VARCHAR(50) NOT NULL,
   `optionGroups_id` INT NOT NULL,
   PRIMARY KEY (`id`, `optionGroups_id`),
   INDEX `fk_options_optionGroups1_idx` (`optionGroups_id` ASC),
@@ -234,8 +234,8 @@ CREATE TABLE IF NOT EXISTS `shopping_db`.`admin` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(40) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
-  `first-name` VARCHAR(45) NULL,
-  `last-name` VARCHAR(45) NULL,
+  `first-name` VARCHAR(45) NOT NULL,
+  `last-name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
