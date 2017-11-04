@@ -1,10 +1,24 @@
 <div class="container">
-  <div class="row" *ngFor="let product of products">
-    <div class="card card-block">
-      <h4 class="card-title">{{ product.name }}</h4>
-      <p class="card-text">{{product.weight}}</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
+  <table class ="table table-striped">
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>SKU</th>
+      <th>Live</th>
+      <th>In Stock</th>
+      <th>Edit</th>
+    </thead>
+    <tbody>
+      <tr id={{product.id}} *ngFor="let product of products">
+          <td>{{ product.id}}</td>
+          <td>{{ product.name }}</td>
+          <td>${{product.price}}</td>
+          <td>{{product.SKU}}</td>
+          <td>{{product.live}}</td>
+          <td>{{product.inStock}}</td>
+          <td><button class="btn btn-success edit" id={{product.id}}>Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
