@@ -40,7 +40,8 @@ VALUES  ("Baby"),
 --     | name  | varchar(45) | NO   |     | NULL    |
 
 INSERT INTO `products` (`name`, `material`, `price`, `categories_id`, `weight`, `cartDesc`, `longDesc`, `thumb`, `image`, `live`, `inStock`)
-VALUES  ("Cutting Board", "Wood", 55.00, 2, 8.5, "Wood Cuttingboard", "Wood cuttingboard perfect for cutting things and doing stuff with it like knifes and food fruite vegetables hot cold, organic cat-free", "https://thumbimage.com", "https://othermainimage.com", 0, 0);
+VALUES  ("Cutting Board", "Wood", 55.00, 2, 8.5, "Wood Cuttingboard", "Wood cuttingboard perfect for cutting things and doing stuff with it like knifes and food fruite vegetables hot cold, organic cat-free", "https://thumbimage.com", "https://othermainimage.com", 0, 0),
+        ("Cheese Knife", "Wood", 25.00, 2, 1.8, "Cheese Knife", "Wooden cheese knife, made of no-porous wenge or african walnut, treated with natural oils and fine enough to slice most cheese.", "https://cdn.shopify.com/s/files/1/0056/9682/products/brooklyn-slate-wood-cheese-knife-02.jpg?v=1423589139", "https://cdn.shopify.com/s/files/1/0056/9682/products/brooklyn-slate-wood-cheese-knife-02.jpg?v=1423589139", 0, 1);
 -- | products          |
 --     | id            | int(11)      | NO   | PRI | NULL    | auto_increment |
 --     | name          | varchar(255) | NO   |     | NULL    |                |
