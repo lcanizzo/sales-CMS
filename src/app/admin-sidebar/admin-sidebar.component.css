@@ -2,10 +2,21 @@
     width: 13%;
     float: left;
     text-align: center;
+    margin-top: 50px;
+    margin-left: 15px;
+}
+
+.card {
+    padding: 0;
+}
+
+.card-body {
+    padding: 0;
 }
 
 li {
     padding: 0;
+    width: 100%;
 }
 
 a {
@@ -13,15 +24,17 @@ a {
     width: 100%;
     text-decoration: none;
     display: inline-block;
-    background-color: #eee;
 }
+
 a:visited, a:link {
     color: #607D8B;
 }
+
 a:hover {
-    color: #039be5;
-    background-color: #CFD8DC;
+    color: rgb(61, 78, 87);
+    background-color: #eee;    
 }
+
 a.active {
     color: #039be5;
 }
