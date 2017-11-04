@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // S E R V I C E S 
 import {ProductsService} from './products.service';
 import { AdminSidebarService } from './admin-sidebar.service';
@@ -35,6 +37,8 @@ const ROUTES = [
   imports: [
     BrowserModule,
     HttpModule,
+    NgbModule.forRoot(),
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ProductsService, AdminSidebarService],
