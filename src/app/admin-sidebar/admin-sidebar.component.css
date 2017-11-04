@@ -2,8 +2,6 @@
     width: 13%;
     float: left;
     text-align: center;
-    margin-top: 50px;
-    margin-left: 15px;
 }
 
 .card {
@@ -14,12 +12,20 @@
     padding: 0;
 }
 
+h4 {
+    line-height: 3rem;  
+    font-size: 2rem;
+    padding-top:3px;  
+}
+
 li {
     padding: 0;
     width: 100%;
 }
 
 a {
+    font-size: 1.5rem;
+    line-height: 2.5rem;    
     padding: 5px 10px;
     width: 100%;
     text-decoration: none;
