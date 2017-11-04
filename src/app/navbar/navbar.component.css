@@ -1,0 +1,24 @@
+.navbar {
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.nav-content {
+    float: right;
+}
+
+.nav-box {
+    margin: 0 10% 0 13%;
+    /* width: 100%; */
+} 
+
+.navbar-brand {
+    float: left;
+    margin-right: 0;
+}
+
+.navbar-text {
+    text-align: center;
+    margin-right: 40px;
+    padding-top: 1rem;
+}
