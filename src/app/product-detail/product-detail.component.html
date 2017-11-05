@@ -1,0 +1,14 @@
+<div>
+  <h1>Product Details Page</h1>
+</div>
+<div *ngFor="let item of product">
+  <h2>{{item.name}} Details</h2>
+  <div>
+    <label>id: </label>{{item.id}}
+  </div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="item.name" placeholder="name"/>
+  </div>
+  <button class="btn btn-primary" (click)="goBack()">Back</button>  
+</div>

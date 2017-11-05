@@ -19,7 +19,7 @@ const orm = {
             cb(result);
         });
     },
-    allByOne: (table, cond, val, cd)=>{
+    allByOne: (table, cond, val, cb)=>{
         let queryString = `SELECT * FROM ${table} WHERE ${cond} = ? ;`;
         log(`ORM searching for ${queryString}\n`);
         connection.query(queryString, val, (err, result)=>{

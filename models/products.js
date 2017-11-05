@@ -7,7 +7,7 @@ const product = {
         });
     },
     allByOne: (cond, val, cb)=>{
-        orm.allBy("products", cond, val, (res)=>{
+        orm.allByOne("products", cond, val, (res)=>{
             cb(res);
         });
     },

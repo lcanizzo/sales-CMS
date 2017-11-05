@@ -13,4 +13,12 @@ router.get('/products', (req,res)=>{
     })
 });
 
+router.get('/product/:id', (req,res)=>{
+    let productId = req.params.id;
+    console.log(productId);
+    products.allByOne('id', productId, (result)=>{
+        res.json(result)
+    })
+})
+
 module.exports = router;

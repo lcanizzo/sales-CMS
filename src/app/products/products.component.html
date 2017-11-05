@@ -17,7 +17,7 @@
           <td>{{product.SKU}}</td>
           <td>{{product.live}}</td>
           <td>{{product.inStock}}</td>
-          <td><button class="btn btn-success edit" id={{product.id}}>Edit</button></td>
+          <td><button class="btn btn-success edit" id={{product.id}} [routerLink]="['/product', product.id]">Edit</button></td>
       </tr>
       <!-- dummy products -->
       <tr>
@@ -27,7 +27,7 @@
           <td>No SKU Assigned</td>
           <td>Live</td>
           <td>11</td>
-          <td><button class="btn btn-success edit">Edit</button></td>
+          <td><button class="btn btn-success edit" >Edit</button></td>
       </tr>
       <tr>
           <td>ID</td>

@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 // R O U T E S
 const ROUTES = [
@@ -24,6 +25,10 @@ const ROUTES = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'product/:id',
+    component: ProductDetailComponent
   }
 ];
 
@@ -32,7 +37,8 @@ const ROUTES = [
     AppComponent,
     ProductsComponent,
     AdminSidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
