@@ -42,6 +42,11 @@
         <label>Description: </label>
         <input [(ngModel)]="product.longDesc" placeholder="product.longDesc"/>
       </div>
+      <div class="product-desc">
+        <label>Thumb: </label>
+        <input [(ngModel)]="product.thumb" placeholder="product.thumb"/>
+        <img src="{{product.thumb}}" alt="{{product.name}} Image">
+      </div>
     </div>
     <div class="card-body">
       <div class="product-live">
