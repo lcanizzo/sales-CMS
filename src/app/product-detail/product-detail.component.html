@@ -1,14 +1,59 @@
 <div>
-  <h1>Product Details Page</h1>
+  <h1 class="header">Product Details</h1>
 </div>
 <div *ngFor="let item of product">
-  <h2>{{item.name}} Details</h2>
-  <div>
-    <label>id: </label>{{item.id}}
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">{{item.name}}</h2>
+    </div>
+    <div class="card-body">
+      <div class="item-name">
+        <label>Name: </label>
+        <input [ngModel]="item.name" placeholder="item.name"/>
+      </div>
+      <div class="item-price">
+        <label>Price: </label>
+        <input [ngModel]="item.price" placeholder="item.price"/>
+      </div>
+      <div class="item-category">
+        <!-- Info pop up with category ids -->
+        <label>Category id: </label>
+        <input [ngModel]="item.categories_id" placeholder="item.categories_id"/>
+      </div>
+      <div class="item-sku">
+        <label>SKU: </label>
+        <input [ngModel]="item.SKU" placeholder="item.SKU"/>
+      </div>
+      <div class="item-material">
+        <label>Material: </label>
+        <input [ngModel]="item.material" placeholder="item.material"/>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="item-cart-desc">
+        <label>Cart Description: </label>
+        <input [ngModel]="item.cartDesc" placeholder="item.cartDesc"/>
+      </div>
+      <div class="item-desc">
+        <label>Description: </label>
+        <input [ngModel]="item.longDesc" placeholder="item.longDesc"/>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="item-live">
+        <label>Live: </label>
+        <input [ngModel]="item.live" placeholder="item.live"/>
+      </div>
+      <div class="item-in-stock">
+        <label>In Stock: </label>
+        <input [ngModel]="item.inStock" placeholder="item.inStock"/>
+      </div>
+      <div class="item-stock">
+        <label>Stock: </label>
+        <input [ngModel]="item.stock" placeholder="item.stock"/>
+      </div>
+    </div>
   </div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="item.name" placeholder="name"/>
-  </div>
-  <button class="btn btn-primary" (click)="goBack()">Back</button>  
+
+  <button class="btn btn-primary" (click)="goBack()">Back</button>   
 </div>

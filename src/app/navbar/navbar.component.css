@@ -1,5 +1,5 @@
 .navbar {
-    padding-bottom: 0;
+    padding: 0;
 }
 
 .nav-content {
@@ -9,16 +9,18 @@
 .nav-box {
     width: 100%;
     margin: 0 10% 0 15%;
+    color: rgba(255,255,255,.5);    
 } 
 
 .navbar-brand {
     float: left;
     margin-right: 0;
-    color: rgba(255, 255, 255, 0.5);    
+    font-size: 1.8rem;
 }
 
 .navbar-text {
     text-align: center;
     margin-right: 40px;
     padding-top: 1rem;
+    font-size: 1.2rem;
 }

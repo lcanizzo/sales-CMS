@@ -27,7 +27,6 @@ product: any = [];
       .switchMap((params: ParamMap)=>
       this.productService.getProduct(+params.get('id')))
         .subscribe(res => this.product = res);
-        //console.log(this.product)
   }
 
   goBack(): void {
