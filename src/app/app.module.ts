@@ -7,6 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // S E R V I C E S 
 import {ProductsService} from './products.service';
+import {ProductService} from './product.service';
 import { AdminSidebarService } from './admin-sidebar.service';
 // C O M P O N E N T S 
 import { AppComponent } from './app.component';
@@ -47,7 +48,7 @@ const ROUTES = [
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ProductsService, AdminSidebarService],
+  providers: [ProductsService, AdminSidebarService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
