@@ -1,5 +1,7 @@
 .sidebar {
-    width: 13%;
+    box-sizing: border-box;
+    max-width: 13%;
+    min-width: 136px;        
     float: left;
     text-align: center;
 }
@@ -10,6 +12,8 @@
 
 .card-body {
     padding: 0;
+    box-sizing: border-box;    
+    min-width: 134px;    
 }
 
 .card-title {
