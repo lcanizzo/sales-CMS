@@ -26,3 +26,7 @@ export class ProductsComponent implements OnInit {
     console.log(`Product Type: \n ${typeof(this.selectedProduct)}`);
   }
 }
+
+
+
+

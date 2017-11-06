@@ -12,7 +12,8 @@ import {ProductService} from '../product.service';
   styleUrls: ['./product-detail.component.css'],
   providers: [ProductService]
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit 
+{
   @Input() product: Product;
 // product: any = [];
   
@@ -22,13 +23,13 @@ export class ProductDetailComponent {
     private location: Location,
   ) {}
 
-// implements OnInit 
-// ngOnInit() {
-//   this.route.paramMap
-//     .switchMap((params: ParamMap)=>
-//     this.productService.getProduct(+params.get('id')))
-//       .subscribe(res => this.product = res);
-// }
+  ngOnInit() {
+    this.route.paramMap
+      .switchMap((params: ParamMap)=>
+      this.productService.getProduct(+params.get('id')))
+        .subscribe(res => this.product = res);
+  }
+
   logProduct() {
     console.log(`This Product Type: \n ${typeof(this.product)}`);        
   }
