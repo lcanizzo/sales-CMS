@@ -1,59 +1,65 @@
 <div>
   <h1 class="header">Product Details</h1>
 </div>
-<div *ngFor="let item of product">
+<div *ngIf="product">
   <div class="card">
     <div class="card-header">
-      <h2 class="card-title">{{item.name}}</h2>
+      <h2 class="card-title">{{product.name}}</h2>
     </div>
     <div class="card-body">
-      <div class="item-name">
+      <div class="product-name">
         <label>Name: </label>
-        <input [ngModel]="item.name" placeholder="item.name"/>
+        <input [(ngModel)]="product.name" placeholder="product.name"/>
       </div>
-      <div class="item-price">
+      <div class="product-id">
+        <label>ID: </label>
+        <h4>{{product.id}}</h4>
+      </div>
+      <div class="product-price">
         <label>Price: </label>
-        <input [ngModel]="item.price" placeholder="item.price"/>
+        <input [(ngModel)]="product.price" placeholder="product.price"/>
       </div>
-      <div class="item-category">
+      <div class="product-category">
         <!-- Info pop up with category ids -->
         <label>Category id: </label>
-        <input [ngModel]="item.categories_id" placeholder="item.categories_id"/>
+        <input [(ngModel)]="product.categories_id" placeholder="product.categories_id"/>
       </div>
-      <div class="item-sku">
+      <div class="product-sku">
         <label>SKU: </label>
-        <input [ngModel]="item.SKU" placeholder="item.SKU"/>
+        <input [(ngModel)]="product.SKU" placeholder="product.SKU"/>
       </div>
-      <div class="item-material">
+      <div class="product-material">
         <label>Material: </label>
-        <input [ngModel]="item.material" placeholder="item.material"/>
+        <input [(ngModel)]="product.material" placeholder="product.material"/>
       </div>
     </div>
     <div class="card-body">
-      <div class="item-cart-desc">
+      <div class="product-cart-desc">
         <label>Cart Description: </label>
-        <input [ngModel]="item.cartDesc" placeholder="item.cartDesc"/>
+        <input [(ngModel)]="product.cartDesc" placeholder="product.cartDesc"/>
       </div>
-      <div class="item-desc">
+      <div class="product-desc">
         <label>Description: </label>
-        <input [ngModel]="item.longDesc" placeholder="item.longDesc"/>
+        <input [(ngModel)]="product.longDesc" placeholder="product.longDesc"/>
       </div>
     </div>
     <div class="card-body">
-      <div class="item-live">
+      <div class="product-live">
         <label>Live: </label>
-        <input [ngModel]="item.live" placeholder="item.live"/>
+        <input [(ngModel)]="product.live" placeholder="product.live"/>
       </div>
-      <div class="item-in-stock">
+      <div class="product-in-stock">
         <label>In Stock: </label>
-        <input [ngModel]="item.inStock" placeholder="item.inStock"/>
+        <input [(ngModel)]="product.inStock" placeholder="product.inStock"/>
       </div>
-      <div class="item-stock">
+      <div class="product-stock">
         <label>Stock: </label>
-        <input [ngModel]="item.stock" placeholder="item.stock"/>
+        <input [(ngModel)]="product.stock" placeholder="product.stock"/>
       </div>
     </div>
   </div>
-
+<!-- Testing -->
+  <button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
+  
   <button class="btn btn-primary" (click)="goBack()">Back</button>   
 </div>

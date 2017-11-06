@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../products.service';
+import {Product} from '../product';
 
 @Component({
   selector: 'app-products',
@@ -18,4 +19,10 @@ export class ProductsComponent implements OnInit {
     });
   };
 
+  selectedProduct: Product;
+  
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
+    console.log(`Product Type: \n ${typeof(this.selectedProduct)}`);
+  }
 }
