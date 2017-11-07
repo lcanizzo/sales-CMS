@@ -43,8 +43,8 @@ const orm = {
         });
     },
     update: (table, cond, vals, cb)=>{
-        let queryString= `UPDATE ${table} SET name= "Other Thing" WHERE id=2;`;
-        // let queryString= `UPDATE ${table} SET ${vals} WHERE ${cond};`
+        let queryString= `UPDATE ${table} SET ${vals} WHERE ${cond};`
+        
         log(`ORM update item:\n
             ${queryString}
         `);

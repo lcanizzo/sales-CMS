@@ -14,7 +14,7 @@ router.get('/products', (req,res)=>{
 });
 
 router.get('/product/:id', (req,res)=>{
-    let productId = req.params.id;
+    const productId = req.params.id;
     console.log(productId);
     products.allByOne('id', productId, (result)=>{
         res.json(result)
@@ -22,15 +22,12 @@ router.get('/product/:id', (req,res)=>{
 })
 
 router.post('/update/:id', (req,res)=>{
-    let id = req.params.id;
-    let name = req.body.name;
-    console.log(`Update ID: \n ${id}`);  
-    let condition = `id = ${id}`;
-    let values = `
-        name = ${name}
-    `;  
-    products.update(condition, values, ()=>{
-        res.redirect(`/product/${id}`)
+    const id = req.params.id;
+    const name = req.body.name;
+    const condition = `id = ${id}`;
+    const values = `name = "${name}"`;  
+    products.update(condition, values, (result)=>{
+        console.log(result);
     })
 })
 module.exports = router;
