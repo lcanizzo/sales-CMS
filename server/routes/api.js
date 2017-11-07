@@ -25,7 +25,19 @@ router.post('/update/:id', (req,res)=>{
     const id = req.params.id;
     const name = req.body.name;
     const condition = `id = ${id}`;
-    const values = `name = "${name}"`;  
+    const values = `name = "${req.body.name}", 
+        material = "${req.body.material}",  
+        price = ${req.body.price},
+        categories_id = ${req.body.categories_id},
+        SKU = "${req.body.SKU}",
+        weight = ${req.body.weight},        
+        cartDesc = "${req.body.cartDesc}",
+        longDesc = "${req.body.longDesc}",
+        thumb = "${req.body.thumb}",
+        stock = ${req.body.stock},
+        live = ${req.body.live},
+        inStock = ${req.body.inStock}
+    `;  
     products.update(condition, values, (result)=>{
         console.log(result);
     })
