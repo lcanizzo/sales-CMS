@@ -21,4 +21,16 @@ router.get('/product/:id', (req,res)=>{
     })
 })
 
+router.post('/update/:id', (req,res)=>{
+    let id = req.params.id;
+    let name = req.body.name;
+    console.log(`Update ID: \n ${id}`);  
+    let condition = `id = ${id}`;
+    let values = `
+        name = ${name}
+    `;  
+    products.update(condition, values, ()=>{
+        res.redirect(`/product/${id}`)
+    })
+})
 module.exports = router;

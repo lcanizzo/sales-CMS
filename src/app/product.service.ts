@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
-
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import {Product} from './product';
@@ -8,19 +7,29 @@ import {Product} from './product';
 @Injectable()
 export class ProductService {
 
-  private ProductsUrl = 'api/product';  // URL to web api
+  private ApiUrl = 'api';  // URL to web api
 
   constructor(private http: Http) { }  
 
   getProduct(id: number) {
-    const url = `${this.ProductsUrl}/${id}`;
+    let url = `${this.ApiUrl}/product/${id}`;
     return this.http.get(url)
       .map(res => res.json())
   }
 
   getAllProducts() {
-    return this.http.get('/api/products')
+    return this.http.get(`${this.ApiUrl}/products`)
       .map(res => res.json());
+  }
+
+  updateProduct(product) {
+    console.log(`Product hitting product.service.updateProduct:\n ${JSON.stringify(product)}`)
+    console.log(product.id, product.name, product.price);
+    let url = `${this.ApiUrl}/update/${product.id}`;    
+    return this.http.post(url, product)
+    .subscribe(res => {
+      console.log(`${res}`);
+    }); 
   }
 
   private handleError(error: any): Promise<any> {

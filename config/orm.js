@@ -43,15 +43,20 @@ const orm = {
         });
     },
     update: (table, cond, vals, cb)=>{
-        let queryString= `UPDATE ${table} SET ${vals} WHERE ${cond};`
+        let queryString= `UPDATE ${table} SET name= "Other Thing" WHERE id=2;`;
+        // let queryString= `UPDATE ${table} SET ${vals} WHERE ${cond};`
         log(`ORM update item:\n
             ${queryString}
         `);
         connection.query(queryString, vals, (err, result)=>{
-            log(`ORM update Result: \n
-                ${result}
-            `);
-            cb(result)
+            if(err) {
+                log(`ORM update Error:\n ${err}`)
+            } else {
+                log(`ORM update Result: \n
+                    ${result}
+                `);
+                cb(result)
+            }
         });
     },
     deleteAllByOne: (table, cond, val, cd)=>{

@@ -31,7 +31,12 @@ export class ProductDetailComponent implements OnInit
   }
 
   logProduct() {
-    console.log(`This Product Type: \n ${typeof(this.product)}`);        
+    console.log(`This Product: \n ${JSON.stringify(this.product[0])}`);        
+  }
+
+  updateProduct() {
+    this.productService.updateProduct(this.product[0])
+    console.log("Update Product Clicked");
   }
 
   goBack(): void {
