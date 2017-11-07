@@ -36,7 +36,7 @@ export class ProductDetailComponent implements OnInit
 
   updateProduct() {
     this.productService.updateProduct(this.product[0])
-    console.log("Update Product Clicked");
+    this.goBack();
   }
 
   goBack(): void {

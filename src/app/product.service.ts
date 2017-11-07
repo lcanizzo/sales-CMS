@@ -23,13 +23,9 @@ export class ProductService {
   }
 
   updateProduct(product) {
-    console.log(`Product hitting product.service.updateProduct:\n ${JSON.stringify(product)}`)
-    console.log(product.id, product.name, product.price);
     let url = `${this.ApiUrl}/update/${product.id}`;    
     return this.http.post(url, product)
-    .subscribe(res => {
-      console.log(`${res}`);
-    }); 
+    .subscribe(); 
   }
 
   private handleError(error: any): Promise<any> {
