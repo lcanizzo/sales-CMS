@@ -12,8 +12,8 @@ import {ProductService} from '../product.service';
   styleUrls: ['./product-detail.component.css'],
   providers: [ProductService]
 })
-export class ProductDetailComponent implements OnInit 
-{
+
+export class ProductDetailComponent implements OnInit {
   @Input() product: Product;
 
   constructor(
@@ -41,20 +41,27 @@ export class ProductDetailComponent implements OnInit
     let minutes = Number(time[1]);
     let seconds = Number(time[2].split('.')[0]);
     let timeValue;
-    if (hours > 0 && hours <= 12)
-    {
-      timeValue= "" + hours;
-    } else if (hours > 12)
-    {
-      timeValue= "" + (hours - 12);
-    }
-    else if (hours == 0)
-    {
-      timeValue= "12";
-    } 
+    if (hours > 0 && hours <= 12) {
+      //GMT is 5 hours ahead of Eastern
+      if (hours - 5 == 0) {
+        timeValue= "12";
+      } else {
+        timeValue= "" + (hours - 5);        
+      }
+    } else if (hours > 12) {
+      if (hours - 12 - 5 == 0) {
+        timeValue= "12";
+      } else {
+        timeValue= "" + (hours - 12 - 5);        
+      }
+    } else {
+      timeValue= "" + (12 - 5);
+    };
+
     timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes; 
     timeValue += (seconds < 10) ? ":0" + seconds : ":" + seconds;  
     timeValue += (hours >= 12) ? " P.M." : " A.M.";  
+    console.log(`Time Value:\n ${timeValue}`);
     this.product[0].lastUpdate = `${prettyDateArray[0]} at: ${timeValue}`;
   }
 

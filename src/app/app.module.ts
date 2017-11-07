@@ -15,6 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { NewProductComponent } from './new-product/new-product.component';
 
 // R O U T E S
 const ROUTES = [
@@ -30,6 +31,10 @@ const ROUTES = [
   {
     path: 'product/:id',
     component: ProductDetailComponent
+  },
+  {
+    path: 'product/new',
+    component: NewProductComponent
   }
 ];
 
@@ -39,7 +44,8 @@ const ROUTES = [
     ProductsComponent,
     AdminSidebarComponent,
     NavbarComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
