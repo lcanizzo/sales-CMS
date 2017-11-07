@@ -23,7 +23,6 @@ router.get('/product/:id', (req,res)=>{
 
 router.post('/update/:id', (req,res)=>{
     const id = req.params.id;
-    const name = req.body.name;
     const condition = `id = ${id}`;
     const values = `name = "${req.body.name}", 
         material = "${req.body.material}",  
@@ -36,10 +35,16 @@ router.post('/update/:id', (req,res)=>{
         thumb = "${req.body.thumb}",
         stock = ${req.body.stock},
         live = ${req.body.live},
-        inStock = ${req.body.inStock}
+        inStock = ${req.body.inStock},
+        lastUpdate = now()
     `;  
     products.update(condition, values, (result)=>{
         console.log(result);
     })
 })
+
+router.post('/create/:id', (req,res)=>{
+
+})
+
 module.exports = router;

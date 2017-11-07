@@ -15,8 +15,7 @@ import {ProductService} from '../product.service';
 export class ProductDetailComponent implements OnInit 
 {
   @Input() product: Product;
-// product: any = [];
-  
+
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -27,7 +26,36 @@ export class ProductDetailComponent implements OnInit
     this.route.paramMap
       .switchMap((params: ParamMap)=>
       this.productService.getProduct(+params.get('id')))
-        .subscribe(res => this.product = res);
+        .subscribe((res) => {
+          this.product = res;
+          this.fixDate();
+        })
+  }
+
+  fixDate() {
+    let lastUpdate = this.product[0].lastUpdate;
+    let prettyDate= lastUpdate.replace("T", " ");
+    let prettyDateArray = prettyDate.split(' ');    
+    let time = prettyDateArray[1].split(':');
+    let hours = Number(time[0]);
+    let minutes = Number(time[1]);
+    let seconds = Number(time[2].split('.')[0]);
+    let timeValue;
+    if (hours > 0 && hours <= 12)
+    {
+      timeValue= "" + hours;
+    } else if (hours > 12)
+    {
+      timeValue= "" + (hours - 12);
+    }
+    else if (hours == 0)
+    {
+      timeValue= "12";
+    } 
+    timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes; 
+    timeValue += (seconds < 10) ? ":0" + seconds : ":" + seconds;  
+    timeValue += (hours >= 12) ? " P.M." : " A.M.";  
+    this.product[0].lastUpdate = `${prettyDateArray[0]} at: ${timeValue}`;
   }
 
   logProduct() {
