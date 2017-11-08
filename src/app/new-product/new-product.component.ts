@@ -13,7 +13,7 @@ import {ProductService} from '../product.service';
 })
 export class NewProductComponent {
 
-   @Input() product: Product;
+   product= new Product;
   
     constructor(
       private productService: ProductService,
@@ -27,8 +27,11 @@ export class NewProductComponent {
     }
   
     createProduct() {
-      this.productService.createProduct()
-      this.goBack();
+      let newProduct = {
+
+      }
+      // this.productService.createProduct()
+      // this.goBack();
     }
   
     goBack(): void {

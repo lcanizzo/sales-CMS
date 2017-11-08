@@ -3,61 +3,76 @@
   </div>
 <div class="card">
     <div class="card-header">
-    <h2 class="card-title">New Product</h2>
+        <h2 class="card-title">New Product</h2>
     </div>
     <div class="card-body">
-    <div class="item-name">
-        <label>Name: </label>
-        <input placeholder="Product Name"/>
+        <form #productForm="ngForm">
+            <div class="form-group">
+                <label>Name: </label>
+                <input [(ngModel)]="product.name" placeholder="Product Name" name="name"/>
+                TODO: remove this: {{product.name}}
+            </div>
+            <div class="form-group">
+                <label>Price: </label>
+                <input [(ngModel)]="product.price" placeholder="Product Price" name="price"/>
+                TODO: remove this: {{product.price}}                
+            </div>
+            <div class="form-group">
+                <!-- Info pop up with category ids -->
+                <label>Category id: </label>
+                <input [(ngModel)]="product.categories_id" placeholder="Product Category" name="categories_id"/>
+                TODO: remove this: {{product.categories_id}}                
+            </div>
+            <div class="form-group">
+                <label>SKU: </label>
+                <input [(ngModel)]="product.SKU" placeholder="Product SKU" name="SKU"/>
+                TODO: remove this: {{product.SKU}}                
+            </div>
+            <div class="form-group">
+                <label>Material: </label>
+                <input [(ngModel)]="product.material" placeholder="Product Material" name="material"/>
+                TODO: remove this: {{product.material}}                
+            </div>
+            <div class="form-group">
+                <label>Cart Description: </label>
+                <input [(ngModel)]="product.cartDesc" placeholder="Cart Description" name="cartDesc"/>
+                TODO: remove this: {{product.cartDesc}}                
+            </div>
+            <div class="form-group">
+                <label>Description: </label>
+                <input [(ngModel)]="product.longDesc" placeholder="Description" name="longDesc"/>
+                TODO: remove this: {{product.longDesc}}                
+            </div>
+            <div class="form-group">
+                <label>Thumb: </label>
+                <input [(ngModel)]="product.thumb" placeholder="Product Thumb" name="thumb"/>
+                <img src="{{product.thumb}}" alt="{{product.thumb}} Image">
+                TODO: remove this: {{product.thumb}}
+            </div>
+            <div class="form-group">
+                <label>Live: </label>
+                <input type="radio" [(ngModel)]="product.live" value='0' name="live"/> False
+                <input type="radio" [(ngModel)]="product.live" value='1' name="live"/> True
+                TODO: remove this: {{product.live}}                
+            </div>
+            <div class="form-group">
+                <label>In Stock: </label>
+                <input type="radio" [(ngModel)]="product.inStock" value='0' name="inStock"/> False
+                <input type="radio" [(ngModel)]="product.inStock" value='1' name="inStock"/> True
+                TODO: remove this: {{product.inStock}}                
+            </div>
+            <div class="form-group">
+                <label>Stock: </label>
+                <input [(ngModel)]="product.stock" placeholder="Amount in Stock" name="stock"/>
+                TODO: remove this: {{product.stock}}                
+            </div>
+            <input type="button" ng-click="reset()" value="Reset" /> 
+            <input type="submit" ng-click="update(user)" value="Save" />
+        </form>
     </div>
-    <div class="item-price">
-        <label>Price: </label>
-        <input placeholder="Product Price"/>
-    </div>
-    <div class="item-category">
-        <!-- Info pop up with category ids -->
-        <label>Category id: </label>
-        <input placeholder="Product Category"/>
-    </div>
-    <div class="item-sku">
-        <label>SKU: </label>
-        <input placeholder="Product SKU"/>
-    </div>
-    <div class="item-material">
-        <label>Material: </label>
-        <input placeholder="Product Material"/>
-    </div>
-    </div>
-    <div class="card-body">
-    <div class="item-cart-desc">
-        <label>Cart Description: </label>
-        <input placeholder="Cart Description"/>
-    </div>
-    <div class="item-desc">
-        <label>Description: </label>
-        <input placeholder="Description"/>
-    </div>
-    <div class="item-desc">
-        <label>Thumb: </label>
-        <input placeholder="Product Thumb"/>
-        <img src="{{item.thumb}}" alt="{{item.name}} Image">
-    </div>
-    </div>
-    <div class="card-body">
-    <div class="item-live">
-        <label>Live: </label>
-        <input placeholder="Product Live"/>
-    </div>
-    <div class="item-in-stock">
-        <label>In Stock: </label>
-        <input placeholder="Product in Stock"/>
-    </div>
-    <div class="item-stock">
-        <label>Stock: </label>
-        <input placeholder="Amount in Stock"/>
-    </div>
-</div>  <!-- Testing -->
-  </div>
-  <button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
-  <button class="btn btn-primary" (click)="updateProduct()">Update Product</button> 
-  <button class="btn btn-primary" (click)="goBack()">Back</button> 
+</div>
+  <!-- Testing -->
+<button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
+<button class="btn btn-primary" (click)="createProduct()">Create Product</button> 
+<button class="btn btn-primary" (click)="goBack()">Cancel</button> 
+<button class="btn btn-primary" (click)="reset()">Reset</button> 
