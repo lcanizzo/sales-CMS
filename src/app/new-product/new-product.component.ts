@@ -11,9 +11,10 @@ import {ProductService} from '../product.service';
   styleUrls: ['./new-product.component.css'],
   providers: [ProductService]  
 })
-export class NewProductComponent {
+export class NewProductComponent implements OnInit {
 
    product= new Product;
+   submitted = false;
   
     constructor(
       private productService: ProductService,
@@ -21,17 +22,23 @@ export class NewProductComponent {
       private location: Location,
     ) {}
   
+    ngOnInit() {
+      this.product.thumb = " ";      
+    }
+
     logProduct() {
       console.log(`This Product: \n ${JSON.stringify(this.product)} 
       \n Product Type: \n ${typeof(this.product)}`);        
     }
+
+    onSubmit() { 
+      this.submitted = true; 
+      this.createProduct();
+    }
   
     createProduct() {
-      let newProduct = {
-
-      }
       // this.productService.createProduct()
-      // this.goBack();
+      this.goBack();
     }
   
     goBack(): void {

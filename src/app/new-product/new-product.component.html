@@ -6,48 +6,49 @@
         <h2 class="card-title">New Product</h2>
     </div>
     <div class="card-body">
-        <form #productForm="ngForm">
+        <form (ngSubmit)="onSubmit()" #productForm="ngForm">
             <div class="form-group">
                 <label>Name: </label>
-                <input [(ngModel)]="product.name" placeholder="Product Name" name="name"/>
+                <input class="form-control" [(ngModel)]="product.name" placeholder="Product Name" name="name"/>
                 TODO: remove this: {{product.name}}
             </div>
             <div class="form-group">
                 <label>Price: </label>
-                <input [(ngModel)]="product.price" placeholder="Product Price" name="price"/>
+                <input class="form-control" [(ngModel)]="product.price" placeholder="Product Price" name="price"/>
                 TODO: remove this: {{product.price}}                
             </div>
             <div class="form-group">
                 <!-- Info pop up with category ids -->
                 <label>Category id: </label>
-                <input [(ngModel)]="product.categories_id" placeholder="Product Category" name="categories_id"/>
+                <input class="form-control" [(ngModel)]="product.categories_id" placeholder="Product Category" name="categories_id"/>
                 TODO: remove this: {{product.categories_id}}                
             </div>
             <div class="form-group">
                 <label>SKU: </label>
-                <input [(ngModel)]="product.SKU" placeholder="Product SKU" name="SKU"/>
+                <input class="form-control" [(ngModel)]="product.SKU" placeholder="Product SKU" name="SKU"/>
                 TODO: remove this: {{product.SKU}}                
             </div>
             <div class="form-group">
                 <label>Material: </label>
-                <input [(ngModel)]="product.material" placeholder="Product Material" name="material"/>
+                <input class="form-control" [(ngModel)]="product.material" placeholder="Product Material" name="material"/>
                 TODO: remove this: {{product.material}}                
             </div>
             <div class="form-group">
                 <label>Cart Description: </label>
-                <input [(ngModel)]="product.cartDesc" placeholder="Cart Description" name="cartDesc"/>
+                <input class="form-control" [(ngModel)]="product.cartDesc" placeholder="Cart Description" name="cartDesc"/>
                 TODO: remove this: {{product.cartDesc}}                
             </div>
             <div class="form-group">
                 <label>Description: </label>
-                <input [(ngModel)]="product.longDesc" placeholder="Description" name="longDesc"/>
+                <input class="form-control" [(ngModel)]="product.longDesc" placeholder="Description" name="longDesc"/>
                 TODO: remove this: {{product.longDesc}}                
             </div>
             <div class="form-group">
                 <label>Thumb: </label>
-                <input [(ngModel)]="product.thumb" placeholder="Product Thumb" name="thumb"/>
+                <input class="form-control" [(ngModel)]="product.thumb" placeholder="Product Thumb" name="thumb"/>
                 <img src="{{product.thumb}}" alt="{{product.thumb}} Image">
                 TODO: remove this: {{product.thumb}}
+                <!-- <img src="{{item.thumb}}" alt="{{item.name}} Image">                                 -->
             </div>
             <div class="form-group">
                 <label>Live: </label>
@@ -63,11 +64,11 @@
             </div>
             <div class="form-group">
                 <label>Stock: </label>
-                <input [(ngModel)]="product.stock" placeholder="Amount in Stock" name="stock"/>
-                TODO: remove this: {{product.stock}}                
+                <input class="form-control" [(ngModel)]="product.stock" placeholder="Amount in Stock" name="stock"/>
+                TODO: remove this: {{product.stock}}      
             </div>
-            <input type="button" ng-click="reset()" value="Reset" /> 
-            <input type="submit" ng-click="update(user)" value="Save" />
+            <input class="form-control" type="button" class="btn btn-default" ng-click="reset()" value="Reset" /> 
+            <input class="form-control" type="submit" class="btn btn-primary" ng-click="update(user)" value="Save" />
         </form>
     </div>
 </div>
@@ -75,4 +76,3 @@
 <button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
 <button class="btn btn-primary" (click)="createProduct()">Create Product</button> 
 <button class="btn btn-primary" (click)="goBack()">Cancel</button> 
-<button class="btn btn-primary" (click)="reset()">Reset</button> 
