@@ -1,66 +1,63 @@
 <div>
-  <h1 class="header">Create Product</h1>
-</div>
-<div *ngFor="let item of product">
-  <div class="card">
+    <h1 class="header">Create Product</h1>
+  </div>
+<div class="card">
     <div class="card-header">
-      <h2 class="card-title">New Product</h2>
+    <h2 class="card-title">New Product</h2>
     </div>
     <div class="card-body">
-      <div class="item-name">
+    <div class="item-name">
         <label>Name: </label>
-        <input [(ngModel)]="item.name" placeholder="Product Name"/>
-      </div>
-      <div class="item-price">
+        <input placeholder="Product Name"/>
+    </div>
+    <div class="item-price">
         <label>Price: </label>
-        <input [(ngModel)]="item.price" placeholder="Product Price"/>
-      </div>
-      <div class="item-category">
+        <input placeholder="Product Price"/>
+    </div>
+    <div class="item-category">
         <!-- Info pop up with category ids -->
         <label>Category id: </label>
-        <input [(ngModel)]="item.categories_id" placeholder="Product Category"/>
-      </div>
-      <div class="item-sku">
+        <input placeholder="Product Category"/>
+    </div>
+    <div class="item-sku">
         <label>SKU: </label>
-        <input [(ngModel)]="item.SKU" placeholder="Product SKU"/>
-      </div>
-      <div class="item-material">
+        <input placeholder="Product SKU"/>
+    </div>
+    <div class="item-material">
         <label>Material: </label>
-        <input [(ngModel)]="item.material" placeholder="Product Material"/>
-      </div>
+        <input placeholder="Product Material"/>
+    </div>
     </div>
     <div class="card-body">
-      <div class="item-cart-desc">
+    <div class="item-cart-desc">
         <label>Cart Description: </label>
-        <input [(ngModel)]="item.cartDesc" placeholder="Cart Description"/>
-      </div>
-      <div class="item-desc">
+        <input placeholder="Cart Description"/>
+    </div>
+    <div class="item-desc">
         <label>Description: </label>
-        <input [(ngModel)]="item.longDesc" placeholder="Description"/>
-      </div>
-      <div class="item-desc">
+        <input placeholder="Description"/>
+    </div>
+    <div class="item-desc">
         <label>Thumb: </label>
-        <input [(ngModel)]="item.thumb" placeholder="Product Thumb"/>
+        <input placeholder="Product Thumb"/>
         <img src="{{item.thumb}}" alt="{{item.name}} Image">
-      </div>
+    </div>
     </div>
     <div class="card-body">
-      <div class="item-live">
+    <div class="item-live">
         <label>Live: </label>
-        <input [(ngModel)]="item.live" placeholder="Product Live"/>
-      </div>
-      <div class="item-in-stock">
-        <label>In Stock: </label>
-        <input [(ngModel)]="item.inStock" placeholder="Product in Stock"/>
-      </div>
-      <div class="item-stock">
-        <label>Stock: </label>
-        <input [(ngModel)]="item.stock" placeholder="Amount in Stock"/>
-      </div>
+        <input placeholder="Product Live"/>
     </div>
+    <div class="item-in-stock">
+        <label>In Stock: </label>
+        <input placeholder="Product in Stock"/>
+    </div>
+    <div class="item-stock">
+        <label>Stock: </label>
+        <input placeholder="Amount in Stock"/>
+    </div>
+</div>  <!-- Testing -->
   </div>
-<!-- Testing -->
-</div>
-<button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
-<button class="btn btn-primary" (click)="updateProduct()">Update Product</button> 
-<button class="btn btn-primary" (click)="goBack()">Back</button>   
+  <button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
+  <button class="btn btn-primary" (click)="updateProduct()">Update Product</button> 
+  <button class="btn btn-primary" (click)="goBack()">Back</button> 

@@ -43,7 +43,7 @@ router.post('/update/:id', (req,res)=>{
     })
 })
 
-router.get('/product/new', (req,res)=>{
+router.post('/createProduct', (req,res)=>{
     console.log('product/new route hit');
 })
 

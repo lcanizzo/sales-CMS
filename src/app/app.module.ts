@@ -33,7 +33,7 @@ const ROUTES = [
     component: ProductDetailComponent
   },
   {
-    path: 'product/new',
+    path: 'createProduct',
     component: NewProductComponent
   }
 ];
