@@ -33,6 +33,7 @@ router.post('/update/:id', (req,res)=>{
         cartDesc = "${req.body.cartDesc}",
         longDesc = "${req.body.longDesc}",
         thumb = "${req.body.thumb}",
+        image = "${req.body.image}",
         stock = ${req.body.stock},
         live = ${req.body.live},
         inStock = ${req.body.inStock},
@@ -44,7 +45,14 @@ router.post('/update/:id', (req,res)=>{
 })
 
 router.post('/createProduct', (req,res)=>{
-    console.log('product/new route hit');
+    console.log('product/new Api route hit');
+    const cols = "`name`, `material`, `price`, `categories_id`, `SKU`, `weight`, `cartDesc`, `longDesc`, `thumb`, `image`, `lastUpdate`, `stock`, `live`, `inStock`";
+    const vals = [`"${req.body.name}"`, `"${req.body.material}"`, `${req.body.price}`, `${req.body.categories_id}`, `"${req.body.SKU}"`, `${req.body.weight}`, `"${req.body.cartDesc}"`, `"${req.body.longDesc}"`, `"${req.body.thumb}"`, `"${req.body.image}"`, 'now()', `${req.body.stock}`, `${req.body.live}`, `${req.body.inStock}`];
+
+    console.log(`Api values:\n ${vals}`);
+    products.create(cols, vals, (result)=>{
+        console.log(`Create Product model Result:\n ${result}`);
+    })
 })
 
 module.exports = router;

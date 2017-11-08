@@ -30,13 +30,12 @@ const orm = {
         });
     },
     create: (table, cols, vals, cb)=>{
-        let columns = cols.toString();
-        let values = printQuestionMarks(vals.length);
-        let queryString = `INSERT INTO ${table} (${columns}) VALUES (${values});`;
+        console.log(`Values Passed to ORM:\n ${vals}`);
+        let queryString = `INSERT INTO ${table} (${cols}) VALUES (${vals});`;
         log(`ORM create item:\n
             ${queryString}\n
             ORM create values:\n
-            ${values}`
+            ${vals}`
         );
         connection.query(queryString, vals, (err, result)=>{
             cb(result);

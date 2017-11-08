@@ -37,8 +37,9 @@ export class NewProductComponent implements OnInit {
     }
   
     createProduct() {
-      // this.productService.createProduct()
-      this.goBack();
+      console.log('Component createProduct() hit');
+      this.productService.createProduct(this.product);
+      // this.goBack();
     }
   
     goBack(): void {

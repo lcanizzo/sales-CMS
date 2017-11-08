@@ -19,14 +19,22 @@
             </div>
             <div class="form-group">
                 <!-- Info pop up with category ids -->
-                <label>Category id: </label>
-                <input class="form-control" [(ngModel)]="product.categories_id" placeholder="Product Category" name="categories_id"/>
+                <label>Category: </label>
+                <input type="radio" [(ngModel)]="product.categories_id" value='1' name="categories_id"/> Baby
+                <input type="radio" [(ngModel)]="product.categories_id" value='2' name="categories_id"/> Kitchen
+                <input type="radio" [(ngModel)]="product.categories_id" value='3' name="categories_id"/> Home
+                <br>
                 TODO: remove this: {{product.categories_id}}                
             </div>
             <div class="form-group">
                 <label>SKU: </label>
                 <input class="form-control" [(ngModel)]="product.SKU" placeholder="Product SKU" name="SKU"/>
                 TODO: remove this: {{product.SKU}}                
+            </div>
+            <div class="form-group">
+                <label>Weight: </label>
+                <input class="form-control" [(ngModel)]="product.weight" placeholder="Product Weight" name="weight"/>
+                TODO: remove this: {{product.weight}}                
             </div>
             <div class="form-group">
                 <label>Material: </label>
@@ -46,20 +54,27 @@
             <div class="form-group">
                 <label>Thumb: </label>
                 <input class="form-control" [(ngModel)]="product.thumb" placeholder="Product Thumb" name="thumb"/>
-                <img src="{{product.thumb}}" alt="{{product.thumb}} Image">
+                <img src="{{product.thumb}}" alt="{{product.name}} Image">
                 TODO: remove this: {{product.thumb}}
-                <!-- <img src="{{item.thumb}}" alt="{{item.name}} Image">                                 -->
+            </div>
+            <div class="form-group">
+                <label>Image: </label>
+                <input class="form-control" [(ngModel)]="product.image" placeholder="Product Image" name="thumb"/>
+                <img src="{{product.image}}" alt="{{product.name}} Image">
+                TODO: remove this: {{product.image}}
             </div>
             <div class="form-group">
                 <label>Live: </label>
                 <input type="radio" [(ngModel)]="product.live" value='0' name="live"/> False
                 <input type="radio" [(ngModel)]="product.live" value='1' name="live"/> True
+                <br>
                 TODO: remove this: {{product.live}}                
             </div>
             <div class="form-group">
                 <label>In Stock: </label>
                 <input type="radio" [(ngModel)]="product.inStock" value='0' name="inStock"/> False
                 <input type="radio" [(ngModel)]="product.inStock" value='1' name="inStock"/> True
+                <br>
                 TODO: remove this: {{product.inStock}}                
             </div>
             <div class="form-group">
@@ -74,5 +89,4 @@
 </div>
   <!-- Testing -->
 <button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
-<button class="btn btn-primary" (click)="createProduct()">Create Product</button> 
 <button class="btn btn-primary" (click)="goBack()">Cancel</button> 

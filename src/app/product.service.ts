@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private http: Http) { }  
 
   getProduct(id: number) {
-    let url = `${this.ApiUrl}/product/${id}`;
+    const url = `${this.ApiUrl}/product/${id}`;
     return this.http.get(url)
       .map(res => res.json())
   }
@@ -23,13 +23,16 @@ export class ProductService {
   }
 
   updateProduct(product) {
-    let url = `${this.ApiUrl}/update/${product.id}`;    
+    const url = `${this.ApiUrl}/update/${product.id}`;    
     return this.http.post(url, product)
     .subscribe(); 
   }
 
-  createProduct() {
+  createProduct(product) {
     console.log('Product Service createProduct() method hit');
+    const url = `${this.ApiUrl}/createProduct`;
+    return this.http.post(url, product)
+    .subscribe();
   }
 
   private handleError(error: any): Promise<any> {

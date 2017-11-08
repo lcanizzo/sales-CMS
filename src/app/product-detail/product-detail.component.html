@@ -32,6 +32,10 @@
         <label>SKU: </label>
         <input class="form-control" [(ngModel)]="item.SKU" placeholder="item.SKU"/>
       </div>
+      <div class="item-weight">
+        <label>Weight: </label>
+        <input class="form-control" [(ngModel)]="item.weight" placeholder="item.weight"/>
+      </div>
       <div class="item-material">
         <label>Material: </label>
         <input class="form-control" [(ngModel)]="item.material" placeholder="item.material"/>
@@ -50,6 +54,11 @@
         <label>Thumb: </label>
         <input class="form-control" [(ngModel)]="item.thumb" placeholder="item.thumb"/>
         <img src="{{item.thumb}}" alt="{{item.name}} Image">
+      </div>
+      <div class="item-desc">
+        <label>Image: </label>
+        <input class="form-control" [(ngModel)]="item.image" placeholder="item.image"/>
+        <img src="{{item.image}}" alt="{{item.name}} Image">
       </div>
     </div>
     <div class="card-body">

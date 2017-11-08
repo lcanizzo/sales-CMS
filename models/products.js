@@ -12,6 +12,7 @@ const product = {
         });
     },
     create: (cols, vals, cb)=>{
+        console.log(`Vals Passed to Model:\n ${vals}`);
         orm.create("products", cols, vals, (res)=>{
             cb(res);
         });
