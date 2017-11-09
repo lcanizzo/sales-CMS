@@ -65,4 +65,12 @@ router.post('/admin', (req,res)=>{
     console.log('admin Api route hit');    
 })
 
+router.post('/deleteProduct', (req,res)=>{
+    const condition = `id`;
+    const value = req.body.id;
+    products.deleteAllByOne(condition, value, (result)=>{
+        console.log('delete product API route hit');
+    })
+})
+
 module.exports = router;

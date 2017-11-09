@@ -35,6 +35,13 @@ export class ProductService {
     .subscribe();
   }
 
+  deleteProduct(product) {
+    console.log('Product Service deleteProduct() hit');
+    const url = `${this.ApiUrl}/deleteProduct`;
+    return this.http.post(url, product)
+    .subscribe();
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); 
     return Promise.reject(error.message || error);

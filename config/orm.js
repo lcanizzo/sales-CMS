@@ -58,7 +58,7 @@ const orm = {
             }
         });
     },
-    deleteAllByOne: (table, cond, val, cd)=>{
+    deleteAllByOne: (table, cond, val, cb)=>{
         let queryString = `DELETE FROM ${table} WHERE ${cond} = ? ;`;
         connection.query(queryString, val, (err, result)=>{
             log(`ORM deleteAllByOne Result:\n 

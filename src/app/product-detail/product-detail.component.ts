@@ -74,6 +74,16 @@ export class ProductDetailComponent implements OnInit {
     this.goBack();
   }
 
+  deleteProduct() {
+    let check = confirm("Confirm Deletion");
+    if (check == true) {
+      this.productService.deleteProduct(this.product[0])
+      this.goBack();
+    } else {
+      console.log("Deletion Canceled");
+    }
+  }
+
   goBack(): void {
     this.location.back();
   }

@@ -9,7 +9,7 @@
         </div>
         <div class="form-group login-item">
           <label>Password: </label>
-          <input type="password" class="form-control" [(ngModel)]="admin.password" placeholder="Password" name="password">
+          <input type="password" class="form-control" [(ngModel)]="admin.password" placeholder="Password" name="password" [ngStyle]="{'border-left': error}">
         </div>
         <input type="submit" class="btn btn-primary" ng-click="login(admin)" value="Login" />
       </form>

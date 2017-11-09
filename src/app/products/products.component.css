@@ -8,3 +8,12 @@
     margin-right: 10%;
     margin: 10px 10% 0 15%;
 }
+
+h1 {
+    display: inline-block;    
+}
+
+.create {
+    float: right;
+    margin-top: 1%;    
+}

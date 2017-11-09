@@ -19,13 +19,14 @@ export class LoginComponent implements OnInit {
   admin= new Admin;
   verified = false;
   windowHeight;
-
+  error = "";
   constructor (
     private adminService: AdminService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.error = "";    
     this.verified = false;  
     this.windowHeight = window.innerHeight
     || document.documentElement.clientHeight
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
           this.verified = true;
           this.router.navigate(['/products']);
         } else {
+          this.error = "10px solid rgb(249, 101, 98)";
           this.loginError();
         }
       })
