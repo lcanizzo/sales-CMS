@@ -1,4 +1,24 @@
-.card {
-    height: 800px;
-    opacity: .2;
+.card-title {
+    padding-top: 10%;
+    font-size: 3rem;
+}
+
+.login-item {
+    padding-left: 20px;    
+}
+
+.form-group {
+    max-width: 33%;
+}
+
+label, h4 {
+    color: white;
+}
+
+label {
+    font-size: 1.6rem;    
+}
+
+.btn {
+    margin-left: 20px;
 }

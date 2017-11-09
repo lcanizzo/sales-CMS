@@ -1,17 +1,17 @@
-<div class="bg-container" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+<div class="bg-container" [ngStyle]="{'background-image': 'url(' + image + ')', 'background-size': '100%'}">
   <div class="login-container" [ngStyle]="{'height': + windowHeight +'px'}">
-    <h4 class="card-title">Staff Portal</h4>
+    <h4 class="card-title login-item">Staff Portal</h4>
     <div class="login-body">
       <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-        <div class="form-group">
+        <div class="form-group login-item">
           <label>Email: </label>
           <input class="form-control" [(ngModel)]="admin.email" placeholder="Email" name="email"/>
         </div>
-        <div class="form-group">
+        <div class="form-group login-item">
           <label>Password: </label>
           <input type="password" class="form-control" [(ngModel)]="admin.password" placeholder="Password" name="password">
         </div>
-        <input class="form-control" type="submit" class="btn btn-primary" ng-click="login(admin)" value="Login" />
+        <input type="submit" class="btn btn-primary" ng-click="login(admin)" value="Login" />
       </form>
     </div>
   </div>
