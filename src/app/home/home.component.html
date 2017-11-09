@@ -1,0 +1,10 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand">Wood Things Store</a>  
+</nav>
+<div class="categories">
+  <div class="card" *ngFor="let cat of categories">
+    <div class="card-body">
+      <img src="{{cat.image}}" alt="Cat Image">
+    </div>
+  </div>
+</div>

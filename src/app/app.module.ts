@@ -19,12 +19,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 // R O U T E S
 const ROUTES = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -42,6 +43,10 @@ const ROUTES = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   }
 ];
 
@@ -53,7 +58,8 @@ const ROUTES = [
     NavbarComponent,
     ProductDetailComponent,
     NewProductComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
