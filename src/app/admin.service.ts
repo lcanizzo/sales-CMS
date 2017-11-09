@@ -7,13 +7,13 @@ import {Admin} from './admin';
 @Injectable()
 export class AdminService {
 
-  private ApiUrl = 'api';  // URL to web api  
+  private ApiUrl = 'api';    
 
   constructor(private http: Http) { }
 
   checkAdmin(admin){
     const url = `${this.ApiUrl}/admin`;
     return this.http.post(url, admin)
-    .subscribe();
+    .map(res => res.json())
   }
 }

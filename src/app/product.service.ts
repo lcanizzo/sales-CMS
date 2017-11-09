@@ -7,7 +7,7 @@ import {Product} from './product';
 @Injectable()
 export class ProductService {
 
-  private ApiUrl = 'api';  // URL to web api
+  private ApiUrl = 'api';  
 
   constructor(private http: Http) { }  
 
@@ -36,7 +36,7 @@ export class ProductService {
   }
 
   private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
+    console.error('An error occurred', error); 
     return Promise.reject(error.message || error);
   }
 }

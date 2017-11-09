@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Admin} from '../admin';
 import { AdminService } from '../admin.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +10,16 @@ import { AdminService } from '../admin.service';
 })
 export class LoginComponent implements OnInit {
 
-  user= new Admin;
+  admin= new Admin;
   verified = false;
 
-  constructor (private adminService: AdminService) { }
+  constructor (
+    private adminService: AdminService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.verified = false;
   }
 
   onSubmit() { 
@@ -22,7 +27,19 @@ export class LoginComponent implements OnInit {
   }
 
   checkAdmin() {
-    this.adminService.checkAdmin(this.user);
+    this.adminService.checkAdmin(this.admin)
+      .subscribe((res)=>{
+        if (res[0].password == this.admin.password) {
+          this.verified = true;
+          this.router.navigate(['/products']);
+        } else {
+          this.loginError();
+        }
+      })
+  };
+
+  loginError() {
+    console.log("Wrong Login");
   }
 
 }

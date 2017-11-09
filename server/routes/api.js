@@ -59,10 +59,8 @@ router.post('/createProduct', (req,res)=>{
 router.post('/admin', (req,res)=>{
     const condition = `email`;
     const value = req.body.email;
-    console.log(`products byone:\n ${products.allByOne}`);
-    console.log(`admin byone:\n ${admin.byOne}`);
     admin.byOne(condition, value, (result)=>{
-        console.log(`admin check result:\n ${JSON.stringify(result)}`)
+        res.json(result);
     })
     console.log('admin Api route hit');    
 })

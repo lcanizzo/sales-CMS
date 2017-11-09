@@ -4,15 +4,13 @@
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
       <div class="form-group">
         <label>Email: </label>
-        <input class="form-control" [(ngModel)]="user.email" placeholder="Email" name="email"/>
-        REMOVE: {{user.email}}
+        <input class="form-control" [(ngModel)]="admin.email" placeholder="Email" name="email"/>
       </div>
       <div class="form-group">
         <label>Password: </label>
-        <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" name="password">
-        REMOVE: {{user.password}}
+        <input type="password" class="form-control" [(ngModel)]="admin.password" placeholder="Password" name="password">
       </div>
-      <input class="form-control" type="submit" class="btn btn-primary" ng-click="login(user)" value="Login" />
+      <input class="form-control" type="submit" class="btn btn-primary" ng-click="login(admin)" value="Login" />
     </form>
   </div>
 </div>
