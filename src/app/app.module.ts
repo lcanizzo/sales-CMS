@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ProductsService} from './products.service';
 import {ProductService} from './product.service';
 import { AdminSidebarService } from './admin-sidebar.service';
+import {LoginService} from './login.service';
 // C O M P O N E N T S 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -22,7 +23,7 @@ import { LoginComponent } from './login/login.component';
 const ROUTES = [
   {
     path: '',
-    redirectTo: 'products',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -36,6 +37,10 @@ const ROUTES = [
   {
     path: 'createProduct',
     component: NewProductComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
@@ -56,7 +61,7 @@ const ROUTES = [
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ProductsService, AdminSidebarService, ProductService],
+  providers: [LoginService, ProductsService, AdminSidebarService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
