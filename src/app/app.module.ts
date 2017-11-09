@@ -16,6 +16,7 @@ import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NewProductComponent } from './new-product/new-product.component';
+import { LoginComponent } from './login/login.component';
 
 // R O U T E S
 const ROUTES = [
@@ -45,7 +46,8 @@ const ROUTES = [
     AdminSidebarComponent,
     NavbarComponent,
     ProductDetailComponent,
-    NewProductComponent
+    NewProductComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

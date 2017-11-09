@@ -15,7 +15,14 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.productService.getAllProducts().subscribe((products) =>{
       this.products = products;
-      console.log(`Products:\n ${this.products}`)
+      console.log(`Products:\n ${this.products}`);
+      for (let i=0; i< this.products.length; i++){
+        if (this.products[i].live == 1) {
+          this.products[i].live = "Y";
+        } else {
+          this.products[i].live = "N";
+        }
+      }
     });
   };
 

@@ -3,6 +3,14 @@
     margin: 20px 0 10px 0;
 }
 
+.card-title {
+    display: inline-block;
+}
+
+.back {
+    float: right;
+}
+
 .non-edit-value {
   display: inline-block;
 }
@@ -17,6 +25,11 @@ img {
     max-height: 350px;
     border-radius: .5rem;
     display: block;
+}
+
+.radio {
+    display: block;
+    margin-left: 20px;
 }
 
  /* V A L I D A T I O N */

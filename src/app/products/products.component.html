@@ -10,7 +10,7 @@
       <th>Price</th>
       <th>SKU</th>
       <th>Live</th>
-      <th>In Stock</th>
+      <th>Stock</th>
       <th>Edit</th>
     </thead>
     <tbody>
@@ -20,36 +20,8 @@
           <td>${{product.price}}</td>
           <td>{{product.SKU}}</td>
           <td>{{product.live}}</td>
-          <td>{{product.inStock}}</td>
+          <td>{{product.stock}}</td>
           <td><button (click)="onSelect(product)" class="btn btn-success edit" id={{product.id}} [routerLink]="['/product', product.id]">Edit</button></td>
-      </tr>
-      <!-- dummy products -->
-      <tr>
-          <td>ID</td>
-          <td>Name</td>
-          <td>$5.00</td>
-          <td>No SKU Assigned</td>
-          <td>Live</td>
-          <td>11</td>
-          <td><button class="btn btn-success edit" >Edit</button></td>
-      </tr>
-      <tr>
-          <td>ID</td>
-          <td>Name</td>
-          <td>$65.00</td>
-          <td>No SKU Assigned</td>
-          <td>Not Live</td>
-          <td>4</td>
-          <td><button class="btn btn-success edit">Edit</button></td>
-      </tr>
-      <tr>
-          <td>ID</td>
-          <td>Name</td>
-          <td>$48.00</td>
-          <td>No SKU Assigned</td>
-          <td>Live</td>
-          <td>23</td>
-          <td><button class="btn btn-success edit">Edit</button></td>
       </tr>
     </tbody>
   </table>

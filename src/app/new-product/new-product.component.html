@@ -4,89 +4,79 @@
 <div class="card">
     <div class="card-header">
         <h2 class="card-title">New Product</h2>
+        <button class="btn btn-primary back" (click)="goBack()">Cancel</button>         
     </div>
     <div class="card-body">
         <form (ngSubmit)="onSubmit()" #productForm="ngForm">
             <div class="form-group">
                 <label>Name: </label>
                 <input class="form-control" [(ngModel)]="product.name" placeholder="Product Name" name="name"/>
-                TODO: remove this: {{product.name}}
             </div>
             <div class="form-group">
                 <label>Price: </label>
                 <input class="form-control" [(ngModel)]="product.price" placeholder="Product Price" name="price"/>
-                TODO: remove this: {{product.price}}                
             </div>
             <div class="form-group">
-                <!-- Info pop up with category ids -->
                 <label>Category: </label>
-                <input type="radio" [(ngModel)]="product.categories_id" value='1' name="categories_id"/> Baby
-                <input type="radio" [(ngModel)]="product.categories_id" value='2' name="categories_id"/> Kitchen
-                <input type="radio" [(ngModel)]="product.categories_id" value='3' name="categories_id"/> Home
+                <div class="radio">
+                    <input type="radio" [(ngModel)]="product.categories_id" value='1' name="categories_id"/> Baby
+                    <input type="radio" [(ngModel)]="product.categories_id" value='2' name="categories_id"/> Kitchen
+                    <input type="radio" [(ngModel)]="product.categories_id" value='3' name="categories_id"/> Home
+                </div>
                 <br>
-                TODO: remove this: {{product.categories_id}}                
             </div>
             <div class="form-group">
                 <label>SKU: </label>
                 <input class="form-control" [(ngModel)]="product.SKU" placeholder="Product SKU" name="SKU"/>
-                TODO: remove this: {{product.SKU}}                
             </div>
             <div class="form-group">
                 <label>Weight: </label>
                 <input class="form-control" [(ngModel)]="product.weight" placeholder="Product Weight" name="weight"/>
-                TODO: remove this: {{product.weight}}                
             </div>
             <div class="form-group">
                 <label>Material: </label>
                 <input class="form-control" [(ngModel)]="product.material" placeholder="Product Material" name="material"/>
-                TODO: remove this: {{product.material}}                
             </div>
             <div class="form-group">
                 <label>Cart Description: </label>
                 <input class="form-control" [(ngModel)]="product.cartDesc" placeholder="Cart Description" name="cartDesc"/>
-                TODO: remove this: {{product.cartDesc}}                
             </div>
             <div class="form-group">
                 <label>Description: </label>
                 <input class="form-control" [(ngModel)]="product.longDesc" placeholder="Description" name="longDesc"/>
-                TODO: remove this: {{product.longDesc}}                
             </div>
             <div class="form-group">
                 <label>Thumb: </label>
                 <input class="form-control" [(ngModel)]="product.thumb" placeholder="Product Thumb" name="thumb"/>
-                <img src="{{product.thumb}}" alt="{{product.name}} Image">
-                TODO: remove this: {{product.thumb}}
+                <img src="{{product.thumb}}">
             </div>
             <div class="form-group">
                 <label>Image: </label>
                 <input class="form-control" [(ngModel)]="product.image" placeholder="Product Image" name="thumb"/>
-                <img src="{{product.image}}" alt="{{product.name}} Image">
-                TODO: remove this: {{product.image}}
+                <img src="{{product.image}}">
             </div>
             <div class="form-group">
                 <label>Live: </label>
-                <input type="radio" [(ngModel)]="product.live" value='0' name="live"/> False
-                <input type="radio" [(ngModel)]="product.live" value='1' name="live"/> True
+                <div class="radio">
+                    <input type="radio" [(ngModel)]="product.live" value='0' name="live"/> No
+                    <input type="radio" [(ngModel)]="product.live" value='1' name="live"/> Yes
+                </div>
                 <br>
-                TODO: remove this: {{product.live}}                
             </div>
             <div class="form-group">
                 <label>In Stock: </label>
-                <input type="radio" [(ngModel)]="product.inStock" value='0' name="inStock"/> False
-                <input type="radio" [(ngModel)]="product.inStock" value='1' name="inStock"/> True
+                <div class="radio">
+                    <input type="radio" [(ngModel)]="product.inStock" value='0' name="inStock"/> No
+                    <input type="radio" [(ngModel)]="product.inStock" value='1' name="inStock"/> Yes
+                </div>
                 <br>
-                TODO: remove this: {{product.inStock}}                
             </div>
             <div class="form-group">
                 <label>Stock: </label>
                 <input class="form-control" [(ngModel)]="product.stock" placeholder="Amount in Stock" name="stock"/>
-                TODO: remove this: {{product.stock}}      
             </div>
             <input class="form-control" type="button" class="btn btn-default" ng-click="reset()" value="Reset" /> 
             <input class="form-control" type="submit" class="btn btn-primary" ng-click="update(user)" value="Save" />
         </form>
     </div>
 </div>
-  <!-- Testing -->
-<button class="btn btn-primary" (click)="logProduct()">Log Product</button>   
-<button class="btn btn-primary" (click)="goBack()">Cancel</button> 
