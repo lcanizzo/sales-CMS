@@ -8,8 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // S E R V I C E S 
 import {ProductsService} from './products.service';
 import {ProductService} from './product.service';
-import { AdminSidebarService } from './admin-sidebar.service';
+import {AdminSidebarService} from './admin-sidebar.service';
 import {LoginService} from './login.service';
+import { AdminService } from './admin.service';
 // C O M P O N E N T S 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -61,7 +62,7 @@ const ROUTES = [
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [LoginService, ProductsService, AdminSidebarService, ProductService],
+  providers: [LoginService, ProductsService, AdminSidebarService, ProductService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

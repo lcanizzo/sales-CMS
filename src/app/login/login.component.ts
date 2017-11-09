@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service';
-import {User} from '../user';
+import {Admin} from '../admin';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +9,20 @@ import {User} from '../user';
 })
 export class LoginComponent implements OnInit {
 
-  user= new User;
+  user= new Admin;
   verified = false;
 
-  constructor(private loginService: LoginService) { }
+  constructor (private adminService: AdminService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() { 
+    this.checkAdmin();
+  }
+
+  checkAdmin() {
+    this.adminService.checkAdmin(this.user);
   }
 
 }

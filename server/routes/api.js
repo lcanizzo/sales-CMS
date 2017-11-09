@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const products = require('../../models/products.js');
+const admin = require('../../models/admin.js');
 
 router.get('/', (req,res)=>{
     res.send('api working');
@@ -53,6 +54,17 @@ router.post('/createProduct', (req,res)=>{
     products.create(cols, vals, (result)=>{
         console.log(`Create Product model Result:\n ${result}`);
     })
+})
+
+router.post('/admin', (req,res)=>{
+    const condition = `email`;
+    const value = req.body.email;
+    console.log(`products byone:\n ${products.allByOne}`);
+    console.log(`admin byone:\n ${admin.byOne}`);
+    admin.byOne(condition, value, (result)=>{
+        console.log(`admin check result:\n ${JSON.stringify(result)}`)
+    })
+    console.log('admin Api route hit');    
 })
 
 module.exports = router;

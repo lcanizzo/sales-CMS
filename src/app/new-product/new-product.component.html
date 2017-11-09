@@ -1,82 +1,86 @@
-<div>
-    <h1 class="header">Create Product</h1>
-  </div>
-<div class="card">
-    <div class="card-header">
-        <h2 class="card-title">New Product</h2>
-        <button class="btn btn-primary back" (click)="goBack()">Cancel</button>         
+<app-navbar></app-navbar>
+<app-admin-sidebar></app-admin-sidebar>
+<div class="page-body">    
+    <div>
+        <h1 class="header">Create Product</h1>
     </div>
-    <div class="card-body">
-        <form (ngSubmit)="onSubmit()" #productForm="ngForm">
-            <div class="form-group">
-                <label>Name: </label>
-                <input class="form-control" [(ngModel)]="product.name" placeholder="Product Name" name="name"/>
-            </div>
-            <div class="form-group">
-                <label>Price: </label>
-                <input class="form-control" [(ngModel)]="product.price" placeholder="Product Price" name="price"/>
-            </div>
-            <div class="form-group">
-                <label>Category: </label>
-                <div class="radio">
-                    <input type="radio" [(ngModel)]="product.categories_id" value='1' name="categories_id"/> Baby
-                    <input type="radio" [(ngModel)]="product.categories_id" value='2' name="categories_id"/> Kitchen
-                    <input type="radio" [(ngModel)]="product.categories_id" value='3' name="categories_id"/> Home
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">New Product</h2>
+            <button class="btn btn-primary back" (click)="goBack()">Cancel</button>         
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+                <div class="form-group">
+                    <label>Name: </label>
+                    <input class="form-control" [(ngModel)]="product.name" placeholder="Product Name" name="name"/>
                 </div>
-                <br>
-            </div>
-            <div class="form-group">
-                <label>SKU: </label>
-                <input class="form-control" [(ngModel)]="product.SKU" placeholder="Product SKU" name="SKU"/>
-            </div>
-            <div class="form-group">
-                <label>Weight: </label>
-                <input class="form-control" [(ngModel)]="product.weight" placeholder="Product Weight" name="weight"/>
-            </div>
-            <div class="form-group">
-                <label>Material: </label>
-                <input class="form-control" [(ngModel)]="product.material" placeholder="Product Material" name="material"/>
-            </div>
-            <div class="form-group">
-                <label>Cart Description: </label>
-                <input class="form-control" [(ngModel)]="product.cartDesc" placeholder="Cart Description" name="cartDesc"/>
-            </div>
-            <div class="form-group">
-                <label>Description: </label>
-                <input class="form-control" [(ngModel)]="product.longDesc" placeholder="Description" name="longDesc"/>
-            </div>
-            <div class="form-group">
-                <label>Thumb: </label>
-                <input class="form-control" [(ngModel)]="product.thumb" placeholder="Product Thumb" name="thumb"/>
-                <img src="{{product.thumb}}">
-            </div>
-            <div class="form-group">
-                <label>Image: </label>
-                <input class="form-control" [(ngModel)]="product.image" placeholder="Product Image" name="thumb"/>
-                <img src="{{product.image}}">
-            </div>
-            <div class="form-group">
-                <label>Live: </label>
-                <div class="radio">
-                    <input type="radio" [(ngModel)]="product.live" value='0' name="live"/> No
-                    <input type="radio" [(ngModel)]="product.live" value='1' name="live"/> Yes
+                <div class="form-group">
+                    <label>Price: </label>
+                    <input class="form-control" [(ngModel)]="product.price" placeholder="Product Price" name="price"/>
                 </div>
-                <br>
-            </div>
-            <div class="form-group">
-                <label>In Stock: </label>
-                <div class="radio">
-                    <input type="radio" [(ngModel)]="product.inStock" value='0' name="inStock"/> No
-                    <input type="radio" [(ngModel)]="product.inStock" value='1' name="inStock"/> Yes
+                <div class="form-group">
+                    <label>Category: </label>
+                    <div class="radio">
+                        <input type="radio" [(ngModel)]="product.categories_id" value='1' name="categories_id"/> Baby
+                        <input type="radio" [(ngModel)]="product.categories_id" value='2' name="categories_id"/> Kitchen
+                        <input type="radio" [(ngModel)]="product.categories_id" value='3' name="categories_id"/> Home
+                    </div>
+                    <br>
                 </div>
-                <br>
-            </div>
-            <div class="form-group">
-                <label>Stock: </label>
-                <input class="form-control" [(ngModel)]="product.stock" placeholder="Amount in Stock" name="stock"/>
-            </div>
-            <input class="form-control" type="button" class="btn btn-default" ng-click="reset()" value="Reset" /> 
-            <input class="form-control" type="submit" class="btn btn-primary" ng-click="update(user)" value="Save" />
-        </form>
+                <div class="form-group">
+                    <label>SKU: </label>
+                    <input class="form-control" [(ngModel)]="product.SKU" placeholder="Product SKU" name="SKU"/>
+                </div>
+                <div class="form-group">
+                    <label>Weight: </label>
+                    <input class="form-control" [(ngModel)]="product.weight" placeholder="Product Weight" name="weight"/>
+                </div>
+                <div class="form-group">
+                    <label>Material: </label>
+                    <input class="form-control" [(ngModel)]="product.material" placeholder="Product Material" name="material"/>
+                </div>
+                <div class="form-group">
+                    <label>Cart Description: </label>
+                    <input class="form-control" [(ngModel)]="product.cartDesc" placeholder="Cart Description" name="cartDesc"/>
+                </div>
+                <div class="form-group">
+                    <label>Description: </label>
+                    <input class="form-control" [(ngModel)]="product.longDesc" placeholder="Description" name="longDesc"/>
+                </div>
+                <div class="form-group">
+                    <label>Thumb: </label>
+                    <input class="form-control" [(ngModel)]="product.thumb" placeholder="Product Thumb" name="thumb"/>
+                    <img src="{{product.thumb}}">
+                </div>
+                <div class="form-group">
+                    <label>Image: </label>
+                    <input class="form-control" [(ngModel)]="product.image" placeholder="Product Image" name="thumb"/>
+                    <img src="{{product.image}}">
+                </div>
+                <div class="form-group">
+                    <label>Live: </label>
+                    <div class="radio">
+                        <input type="radio" [(ngModel)]="product.live" value='0' name="live"/> No
+                        <input type="radio" [(ngModel)]="product.live" value='1' name="live"/> Yes
+                    </div>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label>In Stock: </label>
+                    <div class="radio">
+                        <input type="radio" [(ngModel)]="product.inStock" value='0' name="inStock"/> No
+                        <input type="radio" [(ngModel)]="product.inStock" value='1' name="inStock"/> Yes
+                    </div>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label>Stock: </label>
+                    <input class="form-control" [(ngModel)]="product.stock" placeholder="Amount in Stock" name="stock"/>
+                </div>
+                <input class="form-control" type="button" class="btn btn-default" ng-click="reset()" value="Reset" /> 
+                <input class="form-control" type="submit" class="btn btn-primary" ng-click="update(user)" value="Save" />
+            </form>
+        </div>
     </div>
 </div>

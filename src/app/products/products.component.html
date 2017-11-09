@@ -1,28 +1,32 @@
-<div class="container">
-  <div class="header">
-    <h1>Current Products</h1>
-    <button class="btn btn-secondary create" routerLink="/createProduct">Create New</button>
+<app-navbar></app-navbar>
+<app-admin-sidebar></app-admin-sidebar>
+<div class="page-body">  
+  <div class="container">
+    <div class="header">
+      <h1>Current Products</h1>
+      <button class="btn btn-secondary create" routerLink="/createProduct">Create New</button>
+    </div>
+    <table class ="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>SKU</th>
+        <th>Live</th>
+        <th>Stock</th>
+        <th>Edit</th>
+      </thead>
+      <tbody>
+        <tr id={{product.id}} *ngFor="let product of products">
+            <td>{{ product.id}}</td>
+            <td>{{ product.name }}</td>
+            <td>${{product.price}}</td>
+            <td>{{product.SKU}}</td>
+            <td>{{product.live}}</td>
+            <td>{{product.stock}}</td>
+            <td><button (click)="onSelect(product)" class="btn btn-success edit" id={{product.id}} [routerLink]="['/product', product.id]">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <table class ="table table-striped">
-    <thead>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>SKU</th>
-      <th>Live</th>
-      <th>Stock</th>
-      <th>Edit</th>
-    </thead>
-    <tbody>
-      <tr id={{product.id}} *ngFor="let product of products">
-          <td>{{ product.id}}</td>
-          <td>{{ product.name }}</td>
-          <td>${{product.price}}</td>
-          <td>{{product.SKU}}</td>
-          <td>{{product.live}}</td>
-          <td>{{product.stock}}</td>
-          <td><button (click)="onSelect(product)" class="btn btn-success edit" id={{product.id}} [routerLink]="['/product', product.id]">Edit</button></td>
-      </tr>
-    </tbody>
-  </table>
 </div>
