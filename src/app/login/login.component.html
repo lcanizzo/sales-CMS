@@ -1,16 +1,18 @@
-<div class="card">
-  <h4 class="card-title">Staff Portal</h4>
-  <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-      <div class="form-group">
-        <label>Email: </label>
-        <input class="form-control" [(ngModel)]="admin.email" placeholder="Email" name="email"/>
-      </div>
-      <div class="form-group">
-        <label>Password: </label>
-        <input type="password" class="form-control" [(ngModel)]="admin.password" placeholder="Password" name="password">
-      </div>
-      <input class="form-control" type="submit" class="btn btn-primary" ng-click="login(admin)" value="Login" />
-    </form>
+<div class="bg-container" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+  <div class="login-container" [ngStyle]="{'height': + windowHeight +'px'}">
+    <h4 class="card-title">Staff Portal</h4>
+    <div class="login-body">
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="form-group">
+          <label>Email: </label>
+          <input class="form-control" [(ngModel)]="admin.email" placeholder="Email" name="email"/>
+        </div>
+        <div class="form-group">
+          <label>Password: </label>
+          <input type="password" class="form-control" [(ngModel)]="admin.password" placeholder="Password" name="password">
+        </div>
+        <input class="form-control" type="submit" class="btn btn-primary" ng-click="login(admin)" value="Login" />
+      </form>
+    </div>
   </div>
 </div>

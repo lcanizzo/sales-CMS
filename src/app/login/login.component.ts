@@ -10,8 +10,15 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  images=[
+    "../../assets/00.jpg",
+    "../../assets/01.jpg",
+    "../../assets/02.jpg"
+  ]
+  image= this.images[0];
   admin= new Admin;
   verified = false;
+  windowHeight;
 
   constructor (
     private adminService: AdminService,
@@ -19,7 +26,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.verified = false;
+    this.verified = false;  
+    this.windowHeight = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+    this.windowHeight = this.windowHeight.toString();
+    console.log(`Window Height:\n ${this.windowHeight}`)
   }
 
   onSubmit() { 
