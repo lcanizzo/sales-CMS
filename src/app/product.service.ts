@@ -22,6 +22,12 @@ export class ProductService {
       .map(res => res.json());
   }
 
+  getAllByCat(id: number) {
+    const url = `${this.ApiUrl}/items/${id}`;
+    return this.http.get(url)
+      .map(res => res.json());
+  }
+
   updateProduct(product) {
     const url = `${this.ApiUrl}/update/${product.id}`;    
     return this.http.post(url, product)

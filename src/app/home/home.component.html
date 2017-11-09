@@ -4,7 +4,9 @@
 <div class="categories">
   <div class="card" *ngFor="let cat of categories">
     <div class="card-body">
-      <img src="{{cat.image}}" alt="Cat Image">
+      <a class="cat-link" routerLink="/items/{{cat.id}}">
+        <img src="{{cat.image}}" alt="Cat Image">
+      </a>
     </div>
   </div>
 </div>

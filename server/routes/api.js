@@ -22,6 +22,14 @@ router.get('/product/:id', (req,res)=>{
     })
 })
 
+router.get('/items/:id', (req,res)=>{
+    const categories_id = req.params.id;
+    console.log(`Cat ID:\n ${categories_id}`);
+    products.allByOne('categories_id', categories_id, (result)=>{
+        res.json(result);
+    })
+})
+
 router.post('/update/:id', (req,res)=>{
     const id = req.params.id;
     const condition = `id = ${id}`;

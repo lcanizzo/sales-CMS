@@ -20,6 +20,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { NewProductComponent } from './new-product/new-product.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { StoreItemsComponent } from './store-items/store-items.component';
 
 // R O U T E S
 const ROUTES = [
@@ -47,6 +48,10 @@ const ROUTES = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'items/:id',
+    component: StoreItemsComponent
   }
 ];
 
@@ -59,7 +64,8 @@ const ROUTES = [
     ProductDetailComponent,
     NewProductComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    StoreItemsComponent,
   ],
   imports: [
     BrowserModule,
