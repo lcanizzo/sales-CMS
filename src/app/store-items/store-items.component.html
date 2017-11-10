@@ -1,3 +1,43 @@
-<p>
-  store-items works!
-</p>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">Wood Things Store</a>  
+  <div class= "nav-content">
+    <span class="navbar-text">
+      <a class="nav-link" routerLink="/items/1">Baby</a> 
+    </span>
+    <span class="navbar-text">
+      <a class="nav-link" routerLink="/items/2">Kitchen</a> 
+    </span>
+    <span class="navbar-text">
+      <a class="nav-link" routerLink="/items/3">Home</a> 
+    </span>
+  </div>
+</nav>
+
+<div class="container results-box">
+  <div class="product-box card" *ngFor="let product of products">
+    <div class="row">
+      <div class="col-2 image">
+        <img src="{{product.thumb}}" alt="{{product.name}} Image">
+      </div>
+      <div class="col-4 general-info">
+        <h3>{{product.name}}</h3>
+        <label>Material: </label>
+        <p class="non-edit-value">{{product.material}}</p>
+        <br>
+        <label>Weight: </label>
+        <p class="non-edit-value">{{product.weight}}</p>
+        <br>
+        <button class="btn btn-success edit">Add to Cart</button>
+      </div>
+      <div class="col details">
+        <label class="price">Price: </label>
+        <p class="non-edit-value">${{product.price}}</p>
+        <br>
+        <p class="non-edit-value">{{product.longDesc}}</p>
+        <br>
+        <label>Current Stock: </label>
+        <p class="non-edit-value">{{product.stock}}</p>
+      </div>
+    </div>
+  </div>
+</div>

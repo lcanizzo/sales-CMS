@@ -20,7 +20,8 @@ img {
 }
 
 a {
-    margin-left: 12%;
+    width: 100%;
+    text-align: center;
     font-size: 2rem; 
     font-weight: 400;   
 }
