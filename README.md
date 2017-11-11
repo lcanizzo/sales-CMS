@@ -21,7 +21,7 @@ Note: This is simply a mock-up client UI to demonstrate the dynamic content bein
 ## Staff Portal Overview:
 - The staff Portal displays the Current User and date in the nav-bar.
 - The admin-sidebar component contains links to various components which allow staff to CRUD, or otherwise visualize data from the give portions of the SQL database. 
-Note: For the current version, only the products component is fully functional.
+  - Note: For the current version, only the products component is fully functional.
 - The products component displays all current products with relevant overview information pertaining to each product, as well as the database ID in the event IT is contacted to run item-specific updates beyond the scope of staff and the CMS.
 
 ![App Demo Gif](./gifs/portal-overview.gif)
