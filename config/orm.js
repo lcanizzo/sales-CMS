@@ -61,9 +61,13 @@ const orm = {
     deleteAllByOne: (table, cond, val, cb)=>{
         let queryString = `DELETE FROM ${table} WHERE ${cond} = ? ;`;
         connection.query(queryString, val, (err, result)=>{
+            log(`ORM deleteAllByOne Query:\n ${queryString}\n`)
             log(`ORM deleteAllByOne Result:\n 
-                ${result}
+                ${JSON.stringify(result)}
             `)
+            if (err) {
+                log(`deleteAllByOne ORM Error: \n ${err}`)
+            }
             cb(result);
         });
     }

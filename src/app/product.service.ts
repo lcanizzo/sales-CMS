@@ -45,7 +45,9 @@ export class ProductService {
     console.log('Product Service deleteProduct() hit');
     const url = `${this.ApiUrl}/deleteProduct`;
     return this.http.post(url, product)
-    .subscribe();
+    .subscribe((res)=>{
+      console.log(`delete product service Response:\n ${JSON.stringify(res)}`);
+    });
   }
 
   private handleError(error: any): Promise<any> {

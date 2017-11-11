@@ -77,7 +77,8 @@ router.post('/deleteProduct', (req,res)=>{
     const condition = `id`;
     const value = req.body.id;
     products.deleteAllByOne(condition, value, (result)=>{
-        console.log('delete product API route hit');
+        console.log(`delete product API route hit for ID: ${value}\n
+        API Result:\n ${JSON.stringify(result)}`);
     })
 })
 
