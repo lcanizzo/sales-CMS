@@ -13,12 +13,14 @@ const printQuestionMarks = (length)=>{
 
 // O R M 
 const orm = {
+  //All items by table
     all: function (table, cb) {
         var queryString = "SELECT * FROM " + table + ";";
         connection.query(queryString, function (err, result) {
             cb(result);
         });
     },
+  //All items from given table in model by one condition
     allByOne: (table, cond, val, cb)=>{
         let queryString = `SELECT * FROM ${table} WHERE ${cond} = ? ;`;
         log(`ORM searching for ${queryString}\n`);
@@ -29,6 +31,7 @@ const orm = {
             cb(result);
         });
     },
+  //Create item in given table in model
     create: (table, cols, vals, cb)=>{
         console.log(`Values Passed to ORM:\n ${vals}`);
         let queryString = `INSERT INTO ${table} (${cols}) VALUES (${vals});`;
@@ -41,6 +44,7 @@ const orm = {
             cb(result);
         });
     },
+  //Update item(s) in given tabe in model based on one condition
     update: (table, cond, vals, cb)=>{
         let queryString= `UPDATE ${table} SET ${vals} WHERE ${cond};`
         
@@ -58,6 +62,7 @@ const orm = {
             }
         });
     },
+  //Delete all items from given table in model based on one condition
     deleteAllByOne: (table, cond, val, cb)=>{
         let queryString = `DELETE FROM ${table} WHERE ${cond} = ? ;`;
         connection.query(queryString, val, (err, result)=>{
